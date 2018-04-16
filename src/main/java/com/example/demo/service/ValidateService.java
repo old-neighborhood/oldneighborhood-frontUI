@@ -25,8 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
     */
 @FeignClient(value = "neighborhood-validate-service")
 public interface ValidateService {
-	@RequestMapping(value="/Saler/getID",method=RequestMethod.GET)
-	public String getID();
+	
 	
 	@RequestMapping(value="/Saler/login",method=RequestMethod.GET)
 	public String login(Map<String,Object> reqMap);

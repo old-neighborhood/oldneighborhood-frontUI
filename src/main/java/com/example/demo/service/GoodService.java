@@ -26,17 +26,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
     */
 @FeignClient(value = "neighborhood-good-management-service")
 public interface GoodService {
-	@RequestMapping(value="/Saler/getG_ID",method=RequestMethod.GET)
-	public String getG_ID();
-	
-	@RequestMapping(value="/Saler/setG_ID",method=RequestMethod.GET)
-	public String setG_ID(String g_ID);
 	
 	@RequestMapping(value="/Saler/getGoods",method=RequestMethod.GET)
 	public List<Object> getGoods(String m_ID);
 	
 	@RequestMapping(value="/Saler/getGood",method=RequestMethod.GET)
-	public Object getGood();
+	public Object getGood(String g_ID);
 	
 	@RequestMapping(value="/Saler/modifyGood",method=RequestMethod.GET)
 	public String modifyGood(Map<String,Object> reqMap);
@@ -45,5 +40,5 @@ public interface GoodService {
 	public String addGood(Map<String,Object> reqMap);
 	
 	@RequestMapping(value="/Saler/deleteGood",method=RequestMethod.GET)
-	public String deleteGood(String m_ID);
+	public String deleteGood(String g_ID);
 }

@@ -27,17 +27,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
     */
 @FeignClient(value = "neighborhood-market-management-service")
 public interface MarketService {
-	@RequestMapping(value="/Saler/getM_ID",method=RequestMethod.GET)
-	public String getM_ID();
 	
-	@RequestMapping(value="/Saler/setM_ID",method=RequestMethod.GET)
-	public String setM_ID(String m_ID);
 	
 	@RequestMapping(value="/Saler/getMarkets",method=RequestMethod.GET)
 	public List<Object> getMarketList(String s_ID);
 	
 	@RequestMapping(value="/Saler/getMarket",method=RequestMethod.GET)
-	public Object getMarket();
+	public Object getMarket(String m_ID);
 	
 	@RequestMapping(value="/Saler/modifyMarket",method=RequestMethod.GET)
 	public String modifyMarket(Map<String,Object> reqMap);
@@ -47,4 +43,7 @@ public interface MarketService {
 	
 	@RequestMapping(value="/Saler/deleteMarket",method=RequestMethod.GET)
 	public String deleteMarket(String m_ID);
+
+	@RequestMapping(value="/Saler/recoverMarket",method=RequestMethod.GET)
+	public String recoverMarket(String m_ID);
 }

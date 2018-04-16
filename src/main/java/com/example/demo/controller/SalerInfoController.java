@@ -10,9 +10,13 @@
     
 package com.example.demo.controller;
 
+
+import java.io.IOException;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,8 +45,11 @@ public class SalerInfoController {
 	
 	@RequestMapping("/info")
 	@ResponseBody
-	public Object getInfo(String s_ID) {
-		System.out.println("adasd:"+s_ID);
-		return salerInfoService.getInfo(s_ID);
+	public Object getInfo(HttpSession session,HttpServletResponse response) throws IOException {
+		if(session.getAttribute("ID")==null) {
+			return null;
+		}
+		System.out.println("session:"+session.getAttribute("ID")+" "+session.getMaxInactiveInterval());
+		return salerInfoService.getInfo(session.getAttribute("ID").toString());
 	}
 }

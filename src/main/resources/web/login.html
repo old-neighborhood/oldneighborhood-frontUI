@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>老街坊网站-登录</title>
+<link href="../static/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link href="../static/css/AdminLTE.min.css" rel="stylesheet" />
+</head>
+<body class="hold-transition login-page">
+	<div class="login-box">
+		<div class="login-logo">
+			<b>老街坊</b>网站
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<p class=""><b>登录</b></p>
+
+			<form id="login_form" method="post">
+				<div class="form-group has-feedback">
+					<input type="text" id="inputName" name="username"
+						class="form-control" placeholder="请输入用户名" /> <span
+						class="glyphicon glyphicon-user form-control-feedback"></span>
+				</div>
+				<div class="form-group has-feedback">
+					<input type="password" id="inputPassword" name="password"
+						class="form-control" placeholder="请输入密码" /> <span
+						class="glyphicon glyphicon-lock form-control-feedback"></span>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+						<label class="type col-md-4"><input
+							class="form-check-input" name="type" type="radio" value="user"
+							checked="checked" />游客</label>
+						<label class="type col-md-4"><input
+							class="form-check-input" name="type" type="radio" value="saler" />商户</label>
+						<label class="type col-md-4"><input
+							class="form-check-input" name="type" type="radio" value="admin" />管理员</label>
+
+					</div>
+					<br/>
+				</div>
+				<input id="login" class="btn btn-primary btn-block btn-flat" type="button" value="登录"/>
+			</form>
+
+			<!-- /.social-auth-links -->
+			<div class="row text-center">
+				<br/>
+				<a href="register.html" class="text-center">注册</a>
+			</div>
+
+		</div>
+		<!-- /.login-box-body -->
+	</div>
+	<!-- /.login-box -->
+
+	<!-- Bootstrap 3.3.7 -->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+	<script src="../static/js/jquery.validate.min.js"></script>
+	<script src="../static/js/login.js"></script>
+</body>
+</html>

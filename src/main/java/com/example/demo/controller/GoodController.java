@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,46 +34,43 @@ import com.example.demo.service.GoodService;
 public class GoodController {
 	@Resource
 	private GoodService goodService;
-	@RequestMapping("/getG_ID")
-	@ResponseBody
-	public String getG_ID() {
-		return goodService.getG_ID();
-	}
 	
 	@RequestMapping("/setG_ID")
 	@ResponseBody
-	public String setM_ID(String g_ID) {
-		return goodService.setG_ID(g_ID);
+	public String setM_ID(String g_ID,HttpSession session) {
+		session.setAttribute("g_ID", g_ID);
+		return "{\"result\":\"success\"}";
 	}
 	
 	@RequestMapping("/getGoods")
 	@ResponseBody
-	public List<Object> getGoodList(String m_ID){
-		return goodService.getGoods(m_ID);
+	public List<Object> getGoodList(HttpSession session){
+		return goodService.getGoods(session.getAttribute("m_ID").toString());
 	}
 	
 	@RequestMapping("/getGood")
 	@ResponseBody
-	public Object getGood(){
-		return goodService.getGood();
+	public Object getGood(HttpSession session){
+		return goodService.getGood(session.getAttribute("g_ID").toString());
 	}
 	
 	@RequestMapping("/modifyGood")
 	@ResponseBody
-	public String modifyGood(@RequestBody Map<String,Object> reqMap) {
+	public String modifyGood(@RequestBody Map<String,Object> reqMap,HttpSession session) {
+		reqMap.put("g_ID",session.getAttribute("g_ID").toString());
 		return goodService.modifyGood(reqMap);
 	}
 	
 	@RequestMapping("/addGood")
 	@ResponseBody
-	public String addGood(@RequestBody Map<String,Object> reqMap) {
+	public String addGood(@RequestBody Map<String,Object> reqMap,HttpSession session) {
+		reqMap.put("m_ID", session.getAttribute("m_ID").toString());
 		return goodService.addGood(reqMap);
 	}
 	
 	@RequestMapping("/deleteGood")
 	@ResponseBody
-	public String deleteGood(String g_ID) {
-		System.out.println("aadasd:"+g_ID);
-		return goodService.deleteGood(g_ID);
+	public String deleteGood(HttpSession session) {
+		return goodService.deleteGood(session.getAttribute("g_ID").toString());
 	}
 }

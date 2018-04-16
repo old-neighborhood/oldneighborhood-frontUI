@@ -1,4 +1,7 @@
 /**
+ * 
+ */
+/**
  * Created by st0001 on 2017/12/14.
  * 进行表单内容的基本验证——不符合反馈
  * 进行表单内容的读取发送至~~
@@ -28,8 +31,8 @@ $().ready(function() {
         }
     });
     $("#login").click(function(){
-    	var name=$("#exampleInputEmail1").val();
-    	var passwd=$("#exampleInputPassword1").val();
+    	var name=$("#inputName").val();
+    	var passwd=$("#inputPassword").val();
     	var type=$(':radio:checked').val();
 //    	alert(type);
     	var json = JSON.stringify({

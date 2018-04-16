@@ -2,53 +2,137 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
-  <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-  <link href="./css/sb-admin.css" rel="stylesheet"/>
+<title>老街坊网站-主页</title>
+<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="./css/AdminLTE.min.css" rel="stylesheet" />
+<link href="./css/sb-admin.css" rel="stylesheet" />
+<link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="./skins/_all-skins.min.css" rel="stylesheet" />
 </head>
-<body>
-	<h1>This is SalerIndex Page.</h1>
-	<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Home</li>
-  </ol>
-</nav>
-	<div>
-		<button id="getInfo">获取个人信息</button>
+<body class="skin-blue sidebar-mini wysihtml5-supported" style="height: auto; min-height: 100%;">
+<div class="wrapper" style="height: auto; min-height: 100%;">
+	<div class="main-header">
+		<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<span class="logo-mini"><b>Old</b></span> <!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>老街坊</b>网站</span>
+		</a>
+		<nav class="navbar navbar-static-top">
+		<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img name="head" class="user-image" alt="User Image"/>
+              <span class="hidden-xs text-light"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img name="head" class="img-circle" alt="User Image"/>
+                <p>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="/SalerInfo" class="btn btn-default btn-flat">个人信息</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" data-toggle="modal"
+					data-target="#logoutModal" class="btn btn-default btn-flat">登出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		
+		</ul>
+		</div>
+		</nav>
 	</div>
-	<div>
-		<button id="getMarkets">获取店铺列表</button>
+	<aside class="main-sidebar">
+		<!-- sidebar: style can be found in sidebar.less -->
+		<section class="sidebar" style="height: auto;">
+			<!-- Sidebar user panel -->
+			<div class="user-panel">
+				<div class="pull-left image">
+					<img name="head" class="img-circle" />
+				</div>
+				<div class="pull-left info">
+					<p></p>
+					<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			</div>
+			<!-- /.search form -->
+			<!-- sidebar menu: : style can be found in sidebar.less -->
+			<ul class="sidebar-menu tree" data-widget="tree">
+				<li class="header"></li>
+				<li class="active treeview"><a href="SalerIndex"> <i
+						class="fa fa-dashboard"></i> <span class="col-md-offset-3">主页</span>
+				</a></li>
+				<li class="treeview"><a href="MarketList"> <i
+						class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
+				</a></li>
+				<li class="treeview"><a href="MarketList"> <i
+						class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
+				</a></li>
+				<li class="treeview"><a href="SalerInfo"> <i
+						class="fa fa-user"></i> <span class="col-md-offset-3">个人信息</span>
+				</a></li>
+				<li class="treeview"><a href="#" data-toggle="modal"
+					data-target="#logoutModal"> <i class="fa fa-sign-out"></i> <span
+						class="col-md-offset-3">退出</span>
+				</a></li>
+			</ul>
+		</section>
+		<!-- /.sidebar -->
+	</aside>
+	<div class="content-wrapper">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="active breadcrumb-item">Home</li>
+			</ol>
+		</nav>
+		<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
+				style="width: 15px; height: 50px; color: #fff; background-color: #222d32; margin-top: 250px; float: left;">
+				<i class="fa fa-angle-double-left"
+				style="margin-top: 17px; margin-left: 1px;"></i>
+			</a>
 	</div>
-	<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong></strong> All rights
+    reserved.
+  </footer>
+  </div>
+	<div class="modal fade in" id="logoutModal" tabindex="0" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<h4 class="modal-title">退出登录</h4>
+				</div>
+				<div class="modal-body">
+					<p>确认退出登录?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left"
+						data-dismiss="modal">取消</button>
+					<a href="/"><button type="button" class="btn btn-primary">确认</button></a>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-	<script type="text/javascript">
-		$("#getInfo").click(function() {
-			window.location.href = "/SalerInfo";
-		});
-		$("#getMarkets").click(function() {
-			window.location.href = "/MarketList";
-		});
-	</script>
+	<script src="./js/adminlte.js"></script>
+	<script src="./js/demo.js"></script>
 </body>
 </html>
-<!--  $.ajax({
-				    async: false,
-				    type: "POST",
-				    cache:false, 
-				    dataType: 'jsonp',
-				    jsonp: 'callback',
-				    jsonpCallback: 'api_callback',
-				    url: "http://127.0.0.1:8002/Saler/info",
-				    data: {"key":"saler1"},
-				    timeout: 3000,
-				   // contentType: "application/jsonp;utf-8",
-				    success: function(msg) {
-				      console.log(msg);
-				    },
-				    error:function(XMLHttpRequest, textStatus, errorThrown){ //请求失败时被调用的函数。3个参数：XMLHttpRequest对象、错误信息、捕获的错误对象
-				    	console.log(textStatus+":"+errorThrown);
-				    	//layer.msg("请求未成功" , {anim: 6 });
-				    }
-				  });
-		}); -->

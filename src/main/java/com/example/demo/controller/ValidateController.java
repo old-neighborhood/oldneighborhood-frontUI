@@ -10,16 +10,21 @@
     
 package com.example.demo.controller;
 
+
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.demo.service.ValidateService;
+
+
 
 /**  
     * @ClassName: ValidateController  
@@ -38,15 +43,18 @@ public class ValidateController {
 		return "/login";
 	}
 	
-	@RequestMapping("/getID")
-	@ResponseBody
-	public String getID() {
-		return validateService.getID();
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "/login";
 	}
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public String login(@RequestBody Map<String,Object> reqMap) {
+	public String login(@RequestBody Map<String,Object> reqMap,HttpSession session) {
+		JSONObject temp = JSONObject.parseObject(validateService.login(reqMap));
+		System.out.println(temp.get("ID"));
+		session.setAttribute("ID", temp.get("ID"));
 		return validateService.login(reqMap);
 	}
 	

@@ -3,6 +3,57 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/master/LICENSE)
  */
+.dropdown-toggle{
+	color:#1a2226;
+}
+ 
+ #comment{
+ 	margin-bottom:200px;
+ }
+ 
+ #addGood{
+ 	margin-top:15px;
+ }
+ .card{
+ 	margin-top:20px;
+ }
+ .beDark{
+ 	-webkit-filter: brightness(0.5);
+	filter: brightness(0.5);
+ }
+  .func{  
+  	z-index:100;
+  	position:absolute;
+    display: none; 
+}  
+ .pull-left{
+ 	margin-left:20px;
+ }
+  .pull-right{
+ 	margin-right:0px;
+ }
+a[name="showMarket"]:link    {color:#1a2226;}
+a[name="showMarket"]:visited {color:#1a2226;}
+a[name="showMarket"]:hover   {color:#3c8dbc;}
+ 
+a[name="showGood"]:link    {color:#1a2226;}
+a[name="showGood"]:visited {color:#1a2226;}
+a[name="showGood"]:hover   {color:#3c8dbc;}
+ .btn-box-tool{
+ 	font-size:15px;
+ 	color:#3c8dbc;
+ }
+ 
+ .nav-tabs-custom,.box{
+    /*  box-shadow: 0 0px 0px rgba(0,0,0,0.1); */
+	border-top: 0px solid #d2d6de;
+ 	border-bottom: 0px solid #d2d6de;
+/*	border-left: 1px solid #d2d6de;
+	border-right: 1px solid #d2d6de; */
+} 
+/*  .nav-tabs,.box-header{
+ border-bottom: 1px solid #d2d6de;
+ } */
 #examTable{
   text-align: center;
 }
@@ -242,11 +293,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   -ms-filter: 'FlipH'; }
 
 .content-wrapper {
-  overflow-x: hidden;
-  background: white; }
+  overflow-x: hidden; }
   @media (min-width: 992px) {
     .content-wrapper {
-      margin-left: 250px; } }
+      margin-left: 230px; } }
 
 #sidenavToggler i {
   font-weight: 800; }
@@ -358,7 +408,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
     column-count: 2; } }
 
 .card-login {
-  max-width: 30rem; }
+  max-width: 25rem; }
 
 .card-register {
   max-width: 40rem; }
