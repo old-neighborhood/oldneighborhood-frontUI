@@ -5,7 +5,9 @@ $(document).on('click',".dropdown-menu>li",function(e){
 	var txt = $(this).text()+'<span class="caret"></span>';
 	$(this).parent().parent().find(".dropdown-toggle").html(txt);
 });
-
+window.onload = function(){
+	Pace.stop();
+}  
 
 $().ready(function() {
 var data = null;
@@ -19,6 +21,7 @@ var id;
 		    timeout: 3000,
 		    contentType: "application/json;utf-8",
 		    success: function(msg) {
+		    	console.log(msg);
 		    	data=msg;	
 		    },
 		    error:function(XMLHttpRequest, textStatus, errorThrown){ //请求失败时被调用的函数。3个参数：XMLHttpRequest对象、错误信息、捕获的错误对象

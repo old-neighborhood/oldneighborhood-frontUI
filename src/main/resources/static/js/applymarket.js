@@ -1,6 +1,46 @@
 /**
  * 
  */
+var map;
+var position;
+function init(){
+	var center =  new qq.maps.LatLng(32.05535005772134,118.77860499999997);
+  map = new qq.maps.Map(document.getElementById("container"),{
+        center:  center,
+        zoom: 13
+    });
+  position = map.getCenter();
+ citylocation = new qq.maps.CityService({
+     complete : function(result){
+         map.setCenter(result.detail.latLng);
+     }
+ });
+ citylocation.searchLocalCity();
+    var ap = new qq.maps.place.Autocomplete(document.getElementById('m_address'));
+    var searchService = new qq.maps.SearchService({
+        map : map
+    });
+    //添加监听事件
+    qq.maps.event.addListener(map, 'click', function(event) {
+    	 var marker=new qq.maps.Marker({
+             position:event.latLng, 
+             map:map
+       }); 
+    	 position = marker.position;
+    	 qq.maps.event.addListener(map, 'click', function(event) {
+             marker.setMap(null);      
+     });
+     });
+    
+    qq.maps.event.addListener(ap, "confirm", function(res){
+        searchService.search(res.value);
+        position = map.getCenter();
+    });
+}
+
+
+
+
 $(document).on('click',"#saveMarket",function(e){
 		
 			  $.ajax({
@@ -12,7 +52,7 @@ $(document).on('click',"#saveMarket",function(e){
 				    contentType:"application/json",
 				     data: JSON.stringify({
 		            	'm_name':$("#m_name").val(),
-		    			'm_address':$("#m_address").val(),
+		    			'm_address':$("#m_address").val()+","+position,
 		    			'm_tele':$("#m_tele").val(),
 		    			'm_email':$("#m_email").val(),
 		    			'm_type':$("#m_type").find("option:selected").val(),

@@ -29,6 +29,8 @@ public interface ValidateService {
 	
 	@RequestMapping(value="/Saler/login",method=RequestMethod.GET)
 	public String login(Map<String,Object> reqMap);
+	@RequestMapping(value="/Saler/getInfo",method=RequestMethod.GET)
+	public String getInfo(Map<String, Object> reqMap);
 	
 	
 	

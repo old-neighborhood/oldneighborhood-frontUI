@@ -1,6 +1,46 @@
 /**
  * 
  */
+var msg;
+$.ajax({
+	async: false,
+	type: "GET",
+	cache:false, 
+	dataType: 'json',
+	url: "/getMarket",
+	timeout: 3000,
+	contentType: "application/json;utf-8",
+	success: function(data) {
+		msg=data;
+	}});
+var map;
+function init(){
+	$.ajax({
+		async: false,
+		type: "GET",
+		cache:false, 
+		dataType: 'json',
+		url: "/getMarket",
+		timeout: 3000,
+		contentType: "application/json;utf-8",
+		success: function(data) {
+			msg=data;
+		}});
+	var center =  new qq.maps.LatLng(msg.m_address.split(",")[1],msg.m_address.split(",")[2]);
+	console.log(center);
+  map = new qq.maps.Map(document.getElementById("container"),{
+        center:  center,
+        zoom: 13
+    });
+  
+      var marker=new qq.maps.Marker({
+          position:center,
+			animation:qq.maps.MarkerAnimation.DROP,
+          map:map
+      });
+ 
+}
+
 $().ready(function() {
 		
 		$.ajax({
@@ -14,7 +54,7 @@ $().ready(function() {
 		    success: function(msg) {
 		    	console.log(msg.m_ID);
 		    	$("#m_name").val(msg.m_name);
-		    	$("#m_address").val(msg.m_address);
+		    	$("#m_address").val(msg.m_address.split(",")[0]);
 		    	$("#m_tele").val(msg.m_tele);
 		    	$("#m_email").val(msg.m_email);
 		    	$("#m_type").val(msg.m_type);
@@ -40,7 +80,7 @@ $().ready(function() {
 				    contentType:"application/json",
 				     data: JSON.stringify({
 		            	'm_name':$("#m_name").val(),
-		    			'm_address':$("#m_address").val(),
+		    			'm_address':$("#m_address").val()+","+map.getCenter(),
 		    			'm_tele':$("#m_tele").val(),
 		    			'm_email':$("#m_email").val(),
 		    			'm_image':$("#head").attr("src"),

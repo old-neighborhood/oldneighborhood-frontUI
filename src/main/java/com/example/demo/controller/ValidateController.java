@@ -53,9 +53,15 @@ public class ValidateController {
 	@ResponseBody
 	public String login(@RequestBody Map<String,Object> reqMap,HttpSession session) {
 		JSONObject temp = JSONObject.parseObject(validateService.login(reqMap));
-		System.out.println(temp.get("ID"));
 		session.setAttribute("ID", temp.get("ID"));
 		return validateService.login(reqMap);
+	}
+	
+	@RequestMapping("/getInfo")
+	@ResponseBody
+	public String getInfo(@RequestBody Map<String,Object> reqMap) {
+		System.out.println("ID:"+reqMap.get("ID"));
+		return validateService.getInfo(reqMap);
 	}
 	
 	@RequestMapping("/MarketList")
@@ -94,5 +100,27 @@ public class ValidateController {
 	@RequestMapping("/AdminIndex")
 	public String Admin() {
 		return "/adminIndex";
+	}
+	@RequestMapping("/Forum")
+	public String Forum() {
+		return "/forum";
+	}
+	@RequestMapping("/Post")
+	public String Post() {
+		return "/post";
+	}
+	@RequestMapping("/NewForum")
+	public String NewForum() {
+		return "/newforum";
+	}
+	
+	@RequestMapping("/Announce")
+	public String Announce() {
+		return "/announce";
+	}
+	
+	@RequestMapping("/Register")
+	public String register() {
+		return "/register";
 	}
 }

@@ -1,6 +1,54 @@
 /**
  * 
  */
+window.onload = function(){
+	init();
+	Pace.stop();
+}  
+var msg;
+$.ajax({
+	async: false,
+	type: "GET",
+	cache:false, 
+	dataType: 'json',
+	url: "/getMarket",
+	timeout: 3000,
+	contentType: "application/json;utf-8",
+	success: function(data) {
+		msg=data;
+	}});
+var map;
+function init(){
+	$.ajax({
+		async: false,
+		type: "GET",
+		cache:false, 
+		dataType: 'json',
+		url: "/getMarket",
+		timeout: 3000,
+		contentType: "application/json;utf-8",
+		success: function(data) {
+			msg=data;
+		}});
+	var center =  new qq.maps.LatLng(msg.m_address.split(",")[1],msg.m_address.split(",")[2]);
+	console.log(center);
+  map = new qq.maps.Map(document.getElementById("container"),{
+        center:  center,
+        zoom: 13
+    });
+  map = new qq.maps.Map(document.getElementById("plusMap"),{
+      center:  center,
+      zoom: 13
+  });
+      var marker=new qq.maps.Marker({
+          position:center,
+			animation:qq.maps.MarkerAnimation.DROP,
+          map:map
+      });
+ 
+}
+
+
 $(document).on('click',".dropdown-menu>li",function(e){ 
 	var txt = $(this).text()+'<span class="caret"></span>';
 	$(this).parent().parent().find(".dropdown-toggle").html(txt);
@@ -11,15 +59,7 @@ $(document).on('click',"[name='image']",function(e){
 		   $('#large-image').html($(large_image).animate({ height: '100%', width: '100%' }, 500));
 		  });	
 	
-	 $.ajax({
-		    async: false,
-		    type: "GET",
-		    cache:false, 
-		    dataType: 'json',
-		    url: "/getMarket",
-		    timeout: 3000,
-		    contentType: "application/json;utf-8",
-		    success: function(msg) {
+	 
 		    	var state='<label>状态：</label>';
 		    	if(msg.m_state=="zhuxiao"){
 		    		state+='正在注销';
@@ -42,10 +82,10 @@ $(document).on('click',"[name='image']",function(e){
 		    	else if(msg.m_type=="shop")
 		    		type="商店";
 		    	
-		    	
+		    	$("#plus-address").html("<label>地址：</label>"+msg.m_address.split(",")[0]);
 		    	$("#m_name").text(msg.m_name);
 		    	$("#head").attr("src",msg.m_image);
-		    	$("#m_address").html("<label>地址：</label>"+msg.m_address);
+		    	$("#m_address").html("<br/><label>地址：</label>"+msg.m_address.split(",")[0]);
 		    	$("#m_tele").html("<label>电话：</label>"+msg.m_tele);
 		    	$("#m_email").html("<label>邮箱：</label>"+msg.m_email);
 		    	$("#m_type").html("<label>类型：</label>"+type);
@@ -64,8 +104,6 @@ $(document).on('click',"[name='image']",function(e){
 		    	
 		    	h+='</div><div class="col-md-offset-2">1235条评论</div>';
 		    	$("#star").html(h);
-		    }
-		    });
 	 
 	
 	 
@@ -83,8 +121,8 @@ $(document).on('click',"[name='image']",function(e){
 		    		return;
 		    	}
 		    	var content = '';
+		    	content+='<div class="row">';
 		    	for(var i=0;i<Math.ceil(msg.length/7);i++){
-		    		content+='<div class="row">';
 		    		for(var j=0;7*i+j<msg.length&&j<7;j++){
 		    			content+='<div class="col-md-2" style="margin-bottom:20px;width:165px;"><div class="card card-block">'+
 		    			'<input type="hidden" value="'+msg[7*i+j].g_ID+'"/>'+
@@ -100,9 +138,9 @@ $(document).on('click',"[name='image']",function(e){
 		    			/*'<p class="card-text">'+msg[7*i+j].g_intro+'</p>'+*/
 		    			'</div></div>';
 		    		}
-		    		content+='</div>';
-		    		$("#card").html(content);
 		    	}
+		    	content+='</div>';
+		    	$("#card").html(content);
 		    }
 	 });
 	
@@ -139,7 +177,7 @@ $(document).on('click',"[name='image']",function(e){
 				    timeout: 3000,
 				  // contentType: "application/jsonp;utf-8",
 				    success:function(data){
-				    	layer.msg("保存成功" , {anim: 7 });
+				    	layer.msg("添加成功" , {anim: 6 });
 		            	 setTimeout('window.location.href="MarketInfo"',1000);
 		                 //window.location.href="marketList.html";
 				    },
@@ -235,7 +273,7 @@ $(document).on('click',"[name='image']",function(e){
 			    timeout: 3000,
 			  // contentType: "application/jsonp;utf-8",
 			    success:function(data){
-			    	layer.msg("保存成功" , {anim: 7 });
+			    	layer.msg("修改成功" , {anim: 6 });
 	            	 setTimeout('window.location.href="MarketInfo"',1000);
 	                 //window.location.href="marketList.html";
 			    },
@@ -274,7 +312,7 @@ $(document).on('click',"[name='image']",function(e){
 			    timeout: 3000,
 			  // contentType: "application/jsonp;utf-8",
 			    success:function(data){
-			    	layer.msg("删除成功" , {anim: 7 });
+			    	layer.msg("删除成功" , {anim: 6 });
 		          	 setTimeout('window.location.href="/MarketInfo"',1000);
 		            //window.location.href="marketList.html";
 			    },
@@ -296,7 +334,7 @@ $(document).on('click',"[name='image']",function(e){
 			    contentType:"application/json;utf-8",
 			  // contentType: "application/jsonp;utf-8",
 			    success:function(data){
-			    	layer.msg("注销成功" , {anim: 7 });
+			    	layer.msg("注销成功" , {anim: 6 });
 		          	 setTimeout('window.location.href="MarketInfo"',1000);
 		            //window.location.href="marketList.html";
 			    },
@@ -318,7 +356,7 @@ $(document).on('click',"[name='image']",function(e){
 			    contentType:"application/json;utf-8",
 			  // contentType: "application/jsonp;utf-8",
 			    success:function(data){
-			    	layer.msg("恢复成功" , {anim: 7 });
+			    	layer.msg("恢复成功" , {anim: 6 });
 		          	 setTimeout('window.location.href="MarketInfo"',1000);
 		            //window.location.href="marketList.html";
 			    },

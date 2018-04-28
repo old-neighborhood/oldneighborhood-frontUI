@@ -2,109 +2,218 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport"
+	content="initial-scale=1.0, user-scalable=no, width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>老街坊网站-主页</title>
 <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/AdminLTE.min.css" rel="stylesheet" />
 <link href="./css/sb-admin.css" rel="stylesheet" />
+<link href="./pace/pace.css" rel="stylesheet" />
 <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="./skins/_all-skins.min.css" rel="stylesheet" />
+<link href="./css/main.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="http://cache.amap.com/lbs/static/main1119.css" />
 </head>
-<body class="skin-blue sidebar-mini wysihtml5-supported" style="height: auto; min-height: 100%;">
-<div class="wrapper" style="height: auto; min-height: 100%;">
-	<div class="main-header">
-		<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><b>Old</b></span> <!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>老街坊</b>网站</span>
-		</a>
-		<nav class="navbar navbar-static-top">
-		<div class="navbar-custom-menu">
-		<ul class="nav navbar-nav">
-			<li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img name="head" class="user-image" alt="User Image"/>
-              <span class="hidden-xs text-light"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img name="head" class="img-circle" alt="User Image"/>
-                <p>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="/SalerInfo" class="btn btn-default btn-flat">个人信息</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" data-toggle="modal"
-					data-target="#logoutModal" class="btn btn-default btn-flat">登出</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-		
-		</ul>
+<body class="skin-blue sidebar-mini wysihtml5-supported"
+	style="height: auto; min-height: 100%;">
+
+	<!-- 	<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:px;
+	top:0;opacity:0.8;filter:alpha(opacity=80);z-index:10000;">
+	<div style="position: absolute; cursor1: wait; left:px; top:px; width: auto;
+	 height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px;
+	  background:url(/loading.gif) no-repeat scroll 5px 10px; color: #696969; 
+	  font-family:\'Microsoft YaHei\';">
+	  页面加载中，请等待...</div>
+	  </div> -->
+
+	<div class="pace  pace-inactive">
+		<div class="pace-progress" data-progress-text="100%"
+			data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
 		</div>
-		</nav>
+		<div class="pace-activity"></div>
 	</div>
-	<aside class="main-sidebar">
-		<!-- sidebar: style can be found in sidebar.less -->
-		<section class="sidebar" style="height: auto;">
-			<!-- Sidebar user panel -->
-			<div class="user-panel">
-				<div class="pull-left image">
-					<img name="head" class="img-circle" />
+
+
+	<div class="wrapper" style="height: auto; min-height: 100%;">
+		<div class="main-header">
+			<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>Old</b></span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>老街坊</b>网站</span>
+			</a>
+			<nav class="navbar navbar-static-top">
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user user-menu"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								name="head" class="user-image" alt="User Image" /> <span
+								class="hidden-xs text-light"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header"><img name="head" class="img-circle"
+									alt="User Image" />
+									<p></p></li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-left">
+										<a href="/SalerInfo" class="btn btn-default btn-flat">个人信息</a>
+									</div>
+									<div class="pull-right">
+										<a href="#" data-toggle="modal" data-target="#logoutModal"
+											class="btn btn-default btn-flat">登出</a>
+									</div>
+								</li>
+							</ul></li>
+
+					</ul>
 				</div>
-				<div class="pull-left info">
-					<p></p>
-					<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+			</nav>
+		</div>
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar" style="height: auto;">
+				<!-- Sidebar user panel -->
+				<div class="user-panel">
+					<div class="pull-left image">
+						<img name="head" class="img-circle" />
+					</div>
+					<div class="pull-left info">
+						<p></p>
+						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+					</div>
 				</div>
+				<!-- /.search form -->
+				<!-- sidebar menu: : style can be found in sidebar.less -->
+				<ul class="sidebar-menu tree" data-widget="tree">
+					<li class="header"></li>
+					<li class="active treeview"><a href="SalerIndex"> <i
+							class="fa fa-dashboard"></i> <span class="col-md-offset-3">主页</span>
+					</a></li>
+					<li class="treeview"><a href="MarketList"> <i
+							class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
+					</a></li>
+					<li class="treeview"><a href="Forum"> <i
+							class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
+					</a></li>
+					<li class="treeview"><a href="SalerInfo"> <i
+							class="fa fa-user"></i> <span class="col-md-offset-3">个人信息</span>
+					</a></li>
+					<li class="treeview"><a href="#" data-toggle="modal"
+						data-target="#logoutModal"> <i class="fa fa-sign-out"></i> <span
+							class="col-md-offset-3">退出</span>
+					</a></li>
+				</ul>
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+		<div class="content-wrapper">
+			<div style="position: relative;">
+				<p class="mainTitle">老街坊</p>
+				<img src="/top.jpg" class="topImg" />
 			</div>
-			<!-- /.search form -->
-			<!-- sidebar menu: : style can be found in sidebar.less -->
-			<ul class="sidebar-menu tree" data-widget="tree">
-				<li class="header"></li>
-				<li class="active treeview"><a href="SalerIndex"> <i
-						class="fa fa-dashboard"></i> <span class="col-md-offset-3">主页</span>
-				</a></li>
-				<li class="treeview"><a href="MarketList"> <i
-						class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
-				</a></li>
-				<li class="treeview"><a href="MarketList"> <i
-						class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
-				</a></li>
-				<li class="treeview"><a href="SalerInfo"> <i
-						class="fa fa-user"></i> <span class="col-md-offset-3">个人信息</span>
-				</a></li>
-				<li class="treeview"><a href="#" data-toggle="modal"
-					data-target="#logoutModal"> <i class="fa fa-sign-out"></i> <span
-						class="col-md-offset-3">退出</span>
-				</a></li>
-			</ul>
-		</section>
-		<!-- /.sidebar -->
-	</aside>
-	<div class="content-wrapper">
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="active breadcrumb-item">Home</li>
-			</ol>
-		</nav>
-		<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
+			<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
 				style="width: 15px; height: 50px; color: #fff; background-color: #222d32; margin-top: 250px; float: left;">
 				<i class="fa fa-angle-double-left"
 				style="margin-top: 17px; margin-left: 1px;"></i>
 			</a>
+			<div id="myCarousel" class="carousel slide">
+				<!-- 轮播（Carousel）指标 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="4"></li>
+					<li data-target="#myCarousel" data-slide-to="5"></li>
+				</ol>
+				<!-- 轮播（Carousel）项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img class="roll" src="/roll1.jpg" alt="First slide"
+							style="height: 350px;" />
+					</div>
+					<div class="item">
+						<img class="roll" src="/roll2.jpg" alt="Second slide"
+							style="height: 350px;" />
+					</div>
+					<div class="item">
+						<img class="roll" src="/roll3.jpg" alt="Third slide"
+							style="height: 350px;" />
+					</div>
+					<div class="item">
+						<img class="roll" src="/roll4.jpg" alt="Forth slide"
+							style="height: 350px;" />
+					</div>
+					<div class="item">
+						<img class="roll" src="/roll5.jpg" alt="Fifth slide"
+							style="height: 350px;" />
+					</div>
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+				<a class="left carousel-control" href="#myCarousel" role="button"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#myCarousel" role="button"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			<div class="announce">
+
+				<div class="box box-primary"
+					style="position: relative; left: 0px; top: 0px;width：100%;">
+					<div class="box-header ui-sortable-handle">
+						<i class="fa fa-clipboard"></i>
+
+						<h3 class="box-title">公告栏</h3>
+						<a class="pull-right toList"><i class="fa fa-angle-right"></i></a>
+
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<ul class="todo-list ui-sortable">
+						</ul>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer clearfix no-border">
+						<a href="#" class="more"><i class="fa fa-plus"></i> 更多</a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="nav-tabs-custom lineChart">
+				<ul class="nav nav-tabs pull-right">
+					<li class="pull-left header"><i class="fa fa-inbox"></i> 店铺访问量</li>
+					<li class=""><a href="#a-chart" id="toLine" data-toggle="tab"
+						>折线图</a></li>
+				</ul>
+					<div id="a-chart">
+						<!-- //<canvas id="revenue-canvas" style="width:100%;height:300px;"></canvas> -->
+					</div>
+			</div>
+			<div class="nav-tabs-custom doughnutChart">
+				<ul class="nav nav-tabs pull-right">
+					<li class="pull-left header"><i class="fa fa-inbox"></i> 店铺访问量</li>
+					<li class=""><a href="#b-chart" id="toPie" data-toggle="tab"
+						>环形图</a></li>
+				</ul>
+					<div id="b-chart">
+					</div>
+			</div>
+		</div>
+		<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				<b>Version</b> 2.4.0
+			</div>
+			<strong></strong> All rights reserved.
+		</footer>
 	</div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong></strong> All rights
-    reserved.
-  </footer>
-  </div>
+
 	<div class="modal fade in" id="logoutModal" tabindex="0" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -132,7 +241,11 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+	<script src="./js/pace.min.js"></script>
 	<script src="./js/adminlte.js"></script>
 	<script src="./js/demo.js"></script>
+	<script src="./chart.js/Chart.js"></script>
+	<script src="./chart.js/echarts.min.js"></script>
+	<script src="./js/salerIndex.js"></script>
 </body>
 </html>

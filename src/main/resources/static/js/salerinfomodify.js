@@ -112,12 +112,15 @@
 	    var imgFile = obj.files[0];  
 	    console.log(imgFile);
 	    var img = new Image();  
+	    var imgURL = ""; 
 	    var fr = new FileReader();  
 	    fr.onload = function(){  
 	        document.getElementById("head").src=fr.result;
 	    console.log(fr.result);
 	    }  
 	    fr.readAsDataURL(imgFile); 
+	    console.log(obj.value);
+	    
 	}
 	
 	

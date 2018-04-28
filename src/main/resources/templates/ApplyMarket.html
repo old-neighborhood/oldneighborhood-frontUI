@@ -12,7 +12,7 @@
 <link href="./css/main.css" rel="stylesheet" />
 </head>
 <body class="skin-blue sidebar-mini wysihtml5-supported"
-	style="height: auto; min-height: 100%;">
+	style="height: auto; min-height: 100%;" onload="init()">
 	<div class="wrapper" style="height: auto; min-height: 100%;">
 		<div class="main-header">
 			<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -71,7 +71,7 @@
 					<li class="active treeview"><a href="MarketList"> <i
 							class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
 					</a></li>
-					<li class="treeview"><a href="MarketList"> <i
+					<li class="treeview"><a href="Forum"> <i
 							class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
 					</a></li>
 					<li class="treeview"><a href="SalerInfo"> <i
@@ -131,6 +131,10 @@
 								<tr>
 									<td>商铺地址：</td>
 									<td><input class="form-control" type="text" id="m_address"/></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><div id="container"></div></td>
 								</tr>
 								<tr>
 									<td>商铺电话：</td>
@@ -200,6 +204,10 @@
 		</div>
 		<!-- /.modal-dialog -->
 	</div>
+	<script charset="utf-8"
+		src="http://map.qq.com/api/js?v=2.exp&amp;key=R4YBZ-Q2DR6-MWFST-MYVF7-DPVX2-2IFI6"></script>
+	<script
+		src="http://map.qq.com/api/js?v=2.exp&amp;key=R4YBZ-Q2DR6-MWFST-MYVF7-DPVX2-2IFI6&amp;libraries=place,drawing,geometry,autocomplete,convertor"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="./fileinput/js/fileinput.js" type="text/javascript"></script>

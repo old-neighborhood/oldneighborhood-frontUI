@@ -4,430 +4,481 @@
 <meta charset="UTF-8" />
 <title>老街坊网站-商铺信息</title>
 <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="./fileinput/css/fileinput.css" rel="stylesheet" media="all" type="text/css"/>
+<link href="./fileinput/css/fileinput.css" rel="stylesheet" media="all"
+	type="text/css" />
 <link href="./css/AdminLTE.min.css" rel="stylesheet" />
 <link href="./css/sb-admin.css" rel="stylesheet" />
+<link href="./pace/pace.css" rel="stylesheet" />
 <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="./skins/_all-skins.min.css" rel="stylesheet" />
 </head>
-<body class="skin-blue sidebar-mini wysihtml5-supported" style="height: auto; min-height: 100%;">
-<div class="wrapper" style="height: auto; min-height: 100%;">
-	<div class="main-header">
-		<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><b>O</b>ld</span> <!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>老街坊</b>网站</span>
-		</a>
-		<nav class="navbar navbar-static-top">
-		<div class="navbar-custom-menu">
-		<ul class="nav navbar-nav">
-			<li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/SH00000001.jpg" class="user-image" alt="User Image"/>
-              <span class="hidden-xs text-light"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="/SH00000001.jpg" class="img-circle" alt="User Image"/>
-                <p>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="/SalerInfo" class="btn btn-default btn-flat">个人信息</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" data-toggle="modal"
-					data-target="#logoutModal" class="btn btn-default btn-flat">登出</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-		
-		</ul>
+<body class="skin-blue sidebar-mini wysihtml5-supported"
+	style="height: auto; min-height: 100%;" onload="init()">
+	
+	<div class="pace  pace-inactive">
+	<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+	<div class="wrapper" style="height: auto; min-height: 100%;">
+		<div class="main-header">
+			<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>O</b>ld</span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>老街坊</b>网站</span>
+			</a>
+			<nav class="navbar navbar-static-top">
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user user-menu"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								src="/SH00000001.jpg" class="user-image" alt="User Image" /> <span
+								class="hidden-xs text-light"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header"><img src="/SH00000001.jpg"
+									class="img-circle" alt="User Image" />
+									<p></p></li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-left">
+										<a href="/SalerInfo" class="btn btn-default btn-flat">个人信息</a>
+									</div>
+									<div class="pull-right">
+										<a href="#" data-toggle="modal" data-target="#logoutModal"
+											class="btn btn-default btn-flat">登出</a>
+									</div>
+								</li>
+							</ul></li>
+
+					</ul>
+				</div>
+			</nav>
 		</div>
-		</nav>
-	</div>
-	<aside class="main-sidebar">
-		<!-- sidebar: style can be found in sidebar.less -->
-		<section class="sidebar" style="height: auto;">
-			<!-- Sidebar user panel -->
-			<div class="user-panel">
-				<div class="pull-left image">
-					<img src="/SH00000001.jpg" class="img-circle" />
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar" style="height: auto;">
+				<!-- Sidebar user panel -->
+				<div class="user-panel">
+					<div class="pull-left image">
+						<img src="/SH00000001.jpg" class="img-circle" />
+					</div>
+					<div class="pull-left info">
+						<p></p>
+						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+					</div>
 				</div>
-				<div class="pull-left info">
-					<p></p>
-					<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-				</div>
-			</div>
-			<!-- /.search form -->
-			<!-- sidebar menu: : style can be found in sidebar.less -->
-			<ul class="sidebar-menu tree" data-widget="tree">
-				<li class="header"></li>
-				<li class="treeview"><a href="SalerIndex"> <i
-						class="fa fa-dashboard"></i> <span class="col-md-offset-3">主页</span>
-				</a></li>
-				<li class="active treeview"><a href="MarketList"> <i
-						class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
-				</a></li>
-				<li class="treeview"><a href="MarketList"> <i
-						class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
-				</a></li>
-				<li class="treeview"><a href="SalerInfo"> <i
-						class="fa fa-user"></i> <span class="col-md-offset-3">个人信息</span>
-				</a></li>
-				<li class="treeview"><a href="#" data-toggle="modal"
-					data-target="#logoutModal"> <i class="fa fa-sign-out"></i> <span
-						class="col-md-offset-3">退出</span>
-				</a></li>
-			</ul>
-		</section>
-		<!-- /.sidebar -->
-	</aside>
-	<div class="content-wrapper">
-		<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="/SalerIndex">Home</a></li>
-			<li class="breadcrumb-item"><a href="/MarketList">MarketList</a></li>
-			<li class="breadcrumb-item active" aria-current="page">MarketInfo</li>
-		</ol>
-	</nav>
-		<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
+				<!-- /.search form -->
+				<!-- sidebar menu: : style can be found in sidebar.less -->
+				<ul class="sidebar-menu tree" data-widget="tree">
+					<li class="header"></li>
+					<li class="treeview"><a href="SalerIndex"> <i
+							class="fa fa-dashboard"></i> <span class="col-md-offset-3">主页</span>
+					</a></li>
+					<li class="active treeview"><a href="MarketList"> <i
+							class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
+					</a></li>
+					<li class="treeview"><a href="Forum"> <i
+							class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
+					</a></li>
+					<li class="treeview"><a href="SalerInfo"> <i
+							class="fa fa-user"></i> <span class="col-md-offset-3">个人信息</span>
+					</a></li>
+					<li class="treeview"><a href="#" data-toggle="modal"
+						data-target="#logoutModal"> <i class="fa fa-sign-out"></i> <span
+							class="col-md-offset-3">退出</span>
+					</a></li>
+				</ul>
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+		<div class="content-wrapper">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/SalerIndex">Home</a></li>
+					<li class="breadcrumb-item"><a href="/MarketList">MarketList</a></li>
+					<li class="breadcrumb-item active" aria-current="page">MarketInfo</li>
+				</ol>
+			</nav>
+			<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
 				style="width: 15px; height: 50px; color: #fff; background-color: #222d32; margin-top: 250px; float: left;">
 				<i class="fa fa-angle-double-left"
 				style="margin-top: 17px; margin-left: 1px;"></i>
 			</a>
-			<div class="container ">
-		<div class="list-unstyled">
-			<div class="media border-dark">
-				<div class="media-body">
-				<div class="row">
-					<div class="col-md-8">
-					<div class="row">
-						<div class="pull-left" style="margin-left:20px;"><h1 id="m_name">店铺名称</h1></div>
-						<div class="pull-right" id="hasBtn">
-						
-						</div>
-					</div>
-						<input type="hidden" value="msg[i].m_ID" />
-						<div class="mx-1">
-							<div class="row" id="star">star</div>
-							<p id="m_address">msg[i].m_address</p>
-							<p id="m_tele">msg[i].m_tele</p>
-							<p id="m_email">msg[i].m_email</p>
-							<p id="m_type"></p>
-							<p id="m_intro">msg[i].m_intro</p>
-							<p id="m_state">msg[i].m_state</p>
-							<p id="m_date">date</p>
-						</div>
-					</div>
-					
-				
-				<div class="col-md-4 pull-right">
-				<img id="head" name="image" data-toggle="modal"
-					data-target="#myModal"
-					class="img-responsive pull-right"
-					height='300' />
-					</div>
-					</div>
-					</div>
-			</div>
-			<div class="media  mt-2">
-				<div class="media-body m-3">
-					<div class="row" style="border-bottom:1px grey solid">
-						<h3 class="pull-left" style="margin-left:20px;"><strong>商品列表</strong></h3>
-						<div class="pull-right" style="margin-right:20px;">
-							<button id="addGood" data-toggle="modal" data-target="#addModal" class="btn btn-primary btn-sm mb-2">添加商品</button>
-						</div>
-					</div>
-					<div id="card"></div>
-					<div class="row" style="border-bottom:1px grey solid;margin-top:30px;">
-						<h3 class="pull-left" style="margin-left:20px;"><strong>评论</strong></h3>
-						<div class="pull-right dropdown" style="margin-right:20px;margin-top:20px;">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">申请时间正序
-                 <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li role="presentation"><a role="menuitem" tabindex="-1">发布时间正序</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1">发布时间倒序</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1">按评分正序</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1">按评分倒序</a></li>
-                </ul>
-						</div>
-					</div>
-					<div id="comment">
-					</div>
+			<div class="container col-md-10 col-md-offset-1" style="background-color:white;">
+				<div class="list-unstyled">
+					<div class="media border-dark">
+						<div class="media-body">
+							<div class="row">
+								<div class="col-md-7" style="margin-left:50px;">
+									<div class="row">
+										<div class="pull-left" style="margin-left: 10px;width:70%;" >
+											<h3 id="m_name"></h3>
+										</div>
+										<div class="pull-right" id="hasBtn"></div>
+									</div>
+									<input type="hidden" value="msg[i].m_ID" />
+									<div class="mx-1" style="color:#666;">
+										<div class="row" id="star"></div>
+										<p id="m_address"></p>
+										<p id="m_tele"></p>
+										<p id="m_email"></p>
+										<p id="m_type"></p>
+										<p id="m_intro"></p>
+										<p id="m_state"></p>
+										<p id="m_date"></p>
+									</div>
+								</div>
 
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- recoverMarket -->
-	 <div class="modal fade in" id="recoverModal" tabindex="0" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-					<h4 class="modal-title">恢复商铺</h4>
-				</div>
-				<div class="modal-body">
-					<label>确认恢复商铺?</label>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default pull-left"
-						data-dismiss="modal">取消</button>
-					<button id="confirmRecoverMarket" type="button" class="btn btn-primary">恢复</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	
-	
-	<!-- delMarket -->
-	  <div class="modal fade in" id="delMarketModal" tabindex="0" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-					<h4 class="modal-title">注销商铺</h4>
-				</div>
-				<div class="modal-body">
-					<label>确认注销商铺?</label>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default pull-left"
-						data-dismiss="modal">取消</button>
-					<button id="confirmDelMarket" type="button" class="btn btn-danger">注销</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	
-	<!-- addGood -->
-	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">添加商品</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-				<form>
-					<div class="form-group row">
-						<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
-						<div class="col-md-9">
-							<input type="text" class="form-control" id="addName"
-								placeholder="商品名称" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
-						<div class="col-md-9">
-							<input type="number" class="form-control" id="addPrice"
-								placeholder="商品价格" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
-						<div class="col-md-9">
-							<input type="number" min="0" class="form-control" id="addAmount"
-								placeholder="商品数量" value='0'/>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodImg" class="col-sm-3 col-form-label">商品图片：</label>
-						<div class="row col-md-9" style="padding-right:0;">
-						<div class="col-md-2">
-							<img id="addImg" name="image" data-toggle="modal" data-target="#myModal"
-								class="" height="50"
-								width="50" src="add.png"/>
-						</div>
-						<div class="col-md-10 pull-right" style="padding-right:0;padding-top:10px;">
-							<input class="col-sm-9" type="file" id="addImage" onchange="javascript:window.upImg(this)"
-								name="uploadImg"
-								accept="image/gif, image/jpeg, image/png, image/jpg"/>
-						</div>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
-						<div class="col-sm-9">
-							<textarea class="form-control" placeholder="商品介绍" rows="5" id="addIntro"></textarea>
-						</div>
-					</div>
-				</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button id="confirmAdd" type="button" class="btn btn-primary">添加</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- showGood -->
-	<div class="modal fade" id="showModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">商品信息</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-				<form>
-					<div class="form-group row">
-						<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
-						<label id="showName" class="col-md-9 col-form-label"></label>
-					</div>
-					<div class="form-group row">
-						<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
-							<label id="showPrice" class="col-md-9 col-form-label"></label>
-					</div>
-					<div class="form-group row">
-						<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
-						<label id="showAmount" class="col-md-9 col-form-label"></label>
-					</div>
-					<div class="form-group row">
-						<label for="goodImg" class="col-sm-3 col-form-label">商品图片：</label>
-							<img id="showImg" name="image" data-toggle="modal" data-target="#myModal"
-								class="img-thumbnail img-responsive" height="50"
-								width="50" />
-					</div>
-					<div class="form-group row">
-						<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
-						<label id="showIntro" class="col-md-9 col-form-label"></label>
-					</div>
-				</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- modGood -->
-	<div class="modal fade" id="modModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">修改商品</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-				<form>
-					<div class="form-group row">
-						<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
-						<div class="col-md-9">
-							<input type="text" class="form-control" id="modName"
-								placeholder="商品名称" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
-						<div class="col-md-9">
-							<input type="number" class="form-control" id="modPrice"
-								placeholder="商品价格" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
-						<div class="col-md-9">
-							<input type="number" min="0" class="form-control" id="modAmount"
-								placeholder="商品数量" value='0'/>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodImg" class="col-md-3 col-form-label">商品图片：</label>
-						<div class="row col-md-9" style="padding-right:0;">
-						<div class="col-md-2">
-							<img id="modImg" name="image" data-toggle="modal" data-target="#myModal"
-								class="" height="50"
-								width="50" />
-						</div>
-						<div class="col-md-10 pull-right" style="padding-right:0;padding-top:10px;">
-							<input type="file" id="modImage" onchange="javascript:window.upImg(this)"
-								name="uploadImg"/>
-						</div>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
-						<div class="col-sm-9">
-							<textarea class="form-control" placeholder="商品介绍" rows="5" id="modIntro"></textarea>
-						</div>
-					</div>
-				</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button id="confirmMod" type="button" class="btn btn-primary">修改</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- delGood -->
-	<div class="modal fade" id="delModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">确认删除？</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button id="confirmDel" type="button" class="btn btn-primary">删除</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- image -->
-	<div class="modal fade" id="myModal" tabindex="0" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
 
-		<div class="modal-dialog" id="large-image"></div>
-		<!-- /.modal-content -->
+								<div class="col-md-3 pull-right" style="margin-right:20px;">
+									<img id="head" name="image" data-toggle="modal"
+										data-target="#myModal" class="img-responsive pull-right" 
+										style="height:150px;width:300px;margin-top:20px;"/>
+										<div id="container" style="margin-top:200px;"></div>
+										<a class="search-plus" data-toggle="modal"
+										data-target="#mapModal">
+										<i class="icon fa fa-search-plus" style="font-size:18px;"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="media  mt-2">
+						<div class="media-body m-3">
+							<div class="row" style="border-bottom: 1px grey solid">
+								<h3 class="pull-left" style="margin-left: 20px;">
+									<strong>商品列表</strong>
+								</h3>
+								<div class="pull-right" style="margin-right: 20px;">
+									<button id="addGood" data-toggle="modal"
+										data-target="#addModal" class="btn btn-primary btn-sm mb-2">添加商品</button>
+								</div>
+							</div>
+							<div id="card"></div>
+							<div class="row"
+								style="border-bottom: 1px grey solid; margin-top: 30px;">
+								<h3 class="pull-left" style="margin-left: 20px;">
+									<strong>评论</strong>
+								</h3>
+								<div class="pull-right dropdown"
+									style="margin-right: 20px; margin-top: 20px;">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#"
+										aria-expanded="false">申请时间正序 <span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li role="presentation"><a role="menuitem" tabindex="-1">发布时间正序</a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1">发布时间倒序</a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1">按评分正序</a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1">按评分倒序</a></li>
+									</ul>
+								</div>
+							</div>
+							<div id="comment"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- plus map -->
+			<div class="modal fade in" id="mapModal" tabindex="0"
+				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" style="width:80%">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4 class="modal-title">地图信息</h4>
+						</div>
+						<div class="modal-body">
+						<p id="plus-address" style="color:#666;"></p>
+							<div id="plusMap"></div>
+						</div>
+						<div class="modal-footer">
+							
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			
+			
+			<!-- recoverMarket -->
+			<div class="modal fade in" id="recoverModal" tabindex="0"
+				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4 class="modal-title">恢复商铺</h4>
+						</div>
+						<div class="modal-body">
+							<label>确认恢复商铺?</label>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default pull-left"
+								data-dismiss="modal">取消</button>
+							<button id="confirmRecoverMarket" type="button"
+								class="btn btn-primary">恢复</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+
+
+			<!-- delMarket -->
+			<div class="modal fade in" id="delMarketModal" tabindex="0"
+				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4 class="modal-title">注销商铺</h4>
+						</div>
+						<div class="modal-body">
+							<label>确认注销商铺?</label>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default pull-left"
+								data-dismiss="modal">取消</button>
+							<button id="confirmDelMarket" type="button"
+								class="btn btn-danger">注销</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+
+			<!-- addGood -->
+			<div class="modal fade" id="addModal" tabindex="0" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4 class="modal-title">添加商品</h4>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="form-group row">
+									<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" id="addName"
+											placeholder="商品名称" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
+									<div class="col-md-9">
+										<input type="number" class="form-control" id="addPrice"
+											placeholder="商品价格" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
+									<div class="col-md-9">
+										<input type="number" min="0" class="form-control"
+											id="addAmount" placeholder="商品数量" value='0' />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodImg" class="col-sm-3 col-form-label">商品图片：</label>
+									<div class="row col-md-9" style="padding-right: 0;">
+										<div class="col-md-2">
+											<img id="addImg" name="image" data-toggle="modal"
+												data-target="#myModal" class="" height="50" width="50"
+												src="add.png" />
+										</div>
+										<div class="col-md-10 pull-right"
+											style="padding-right: 0; padding-top: 10px;">
+											<input class="col-sm-9" type="file" id="addImage"
+												onchange="javascript:window.upImg(this)" name="uploadImg"
+												accept="image/gif, image/jpeg, image/png, image/jpg" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" placeholder="商品介绍" rows="5"
+											id="addIntro"></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">取消</button>
+							<button id="confirmAdd" type="button" class="btn btn-primary">添加</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- showGood -->
+			<div class="modal fade" id="showModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">商品信息</h4>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="form-group row">
+									<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
+									<label id="showName" class="col-md-9 col-form-label"></label>
+								</div>
+								<div class="form-group row">
+									<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
+									<label id="showPrice" class="col-md-9 col-form-label"></label>
+								</div>
+								<div class="form-group row">
+									<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
+									<label id="showAmount" class="col-md-9 col-form-label"></label>
+								</div>
+								<div class="form-group row">
+									<label for="goodImg" class="col-sm-3 col-form-label">商品图片：</label>
+									<img id="showImg" name="image" data-toggle="modal"
+										data-target="#myModal" class="img-thumbnail img-responsive"
+										height="50" width="50" />
+								</div>
+								<div class="form-group row">
+									<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
+									<label id="showIntro" class="col-md-9 col-form-label"></label>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- modGood -->
+			<div class="modal fade" id="modModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">修改商品</h4>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="form-group row">
+									<label for="goodName" class="col-md-3 col-form-label">商品名称：</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" id="modName"
+											placeholder="商品名称" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodPrice" class="col-md-3 col-form-label">商品价格：</label>
+									<div class="col-md-9">
+										<input type="number" class="form-control" id="modPrice"
+											placeholder="商品价格" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodAmount" class="col-md-3 col-form-label">商品数量：</label>
+									<div class="col-md-9">
+										<input type="number" min="0" class="form-control"
+											id="modAmount" placeholder="商品数量" value='0' />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodImg" class="col-md-3 col-form-label">商品图片：</label>
+									<div class="row col-md-9" style="padding-right: 0;">
+										<div class="col-md-2">
+											<img id="modImg" name="image" data-toggle="modal"
+												data-target="#myModal" class="" height="50" width="50" />
+										</div>
+										<div class="col-md-10 pull-right"
+											style="padding-right: 0; padding-top: 10px;">
+											<input type="file" id="modImage"
+												onchange="javascript:window.upImg(this)" name="uploadImg" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="goodIntro" class="col-sm-3 col-form-label">商品介绍：</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" placeholder="商品介绍" rows="5"
+											id="modIntro"></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">取消</button>
+							<button id="confirmMod" type="button" class="btn btn-primary">修改</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- delGood -->
+			<div class="modal fade" id="delModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">确认删除？</h4>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">关闭</button>
+							<button id="confirmDel" type="button" class="btn btn-danger">删除</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- image -->
+			<div class="modal fade" id="myModal" tabindex="0" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+
+				<div class="modal-dialog" id="large-image"></div>
+				<!-- /.modal-content -->
+			</div>
+
+
+
+
+
+
+		</div>
+		<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				<b>Version</b> 2.4.0
+			</div>
+			<strong></strong> All rights reserved.
+		</footer>
 	</div>
-		
-		
-			
-			
-			
-			
-	</div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong></strong> All rights
-    reserved.
-  </footer>
-  </div>
-  
-  <div class="modal fade in" id="deleteModal" tabindex="0" role="dialog"
+
+	<div class="modal fade in" id="deleteModal" tabindex="0" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -451,7 +502,7 @@
 		</div>
 		<!-- /.modal-dialog -->
 	</div>
-  
+
 	<div class="modal fade in" id="logoutModal" tabindex="0" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -476,14 +527,19 @@
 		</div>
 		<!-- /.modal-dialog -->
 	</div>
+	<script charset="utf-8"
+		src="http://map.qq.com/api/js?v=2.exp&amp;key=R4YBZ-Q2DR6-MWFST-MYVF7-DPVX2-2IFI6"></script>
+	<script
+		src="http://map.qq.com/api/js?v=2.exp&amp;key=R4YBZ-Q2DR6-MWFST-MYVF7-DPVX2-2IFI6&amp;libraries=place,drawing,geometry,autocomplete,convertor"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="./fileinput/js/fileinput.js" type="text/javascript"></script>
 	<script src="./fileinput/js/locales/zh.js" type="text/javascript"></script>
 	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+	<script src="./js/pace.min.js"></script>
 	<script src="./js/adminlte.js"></script>
 	<script src="./js/demo.js"></script>
 	<script src="./js/marketinfo.js"></script>
 </body>
-	
+
 </html>

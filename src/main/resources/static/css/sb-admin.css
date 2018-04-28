@@ -3,6 +3,191 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/master/LICENSE)
  */
+ #a-chart,#b-chart{
+ height:300px;
+
+ }
+ 
+ .lineChart{
+ 	width:60%;
+ 	height:350px;
+ 	margin-left:2%;
+ 	margin-top:20px;
+ 	float:left;
+ }
+  .doughnutChart{
+ 	width:35%;
+ 	height:350px;
+ 	margin-left:2%;
+ 	margin-top:20px;
+ 	float:left;
+ }
+ 
+ .toList{
+ 	color:#666;
+ 	font-size:30px;
+ 	margin-top:-5px;
+ 	margin-right:20px;
+ 	cursor:pointer;
+ }
+ .toList:hover{
+ 	font-size:35px;
+ 	margin-top:-8px;
+ }
+ .a-title{
+ white-space: nowrap;
+ padding-top:20px;
+ }
+ .a-title>h3{
+ 	font-size:26px;
+ 	margin: 0 0 2px;
+    padding: 0;
+    text-align: center;
+ }
+ .a-info{
+ 	font-size:12px;
+ 	padding-top:10px;
+ 	text-align:center;
+ 	color:#666;
+ }
+ .a-content{
+ 	padding:20px 80px;
+ }
+ .a-content>p{
+ 	text-indent:2em;
+ }
+ .a-content>img{
+ 	width:100%;
+ 	height:auto;
+ 	margin:20px auto;
+ }
+ .article{
+ 	width:60%;
+ 	height:auto;
+ 	background:#fff;
+ 	margin:20px auto;
+ }
+ .more{
+ 	margin-left:45%;
+ 	color:#000;
+ }
+ .ui-sortable>li{
+ 	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+.announce-a{
+	width:20%;
+  	color:#666;
+  	font-size:16px;
+  }
+ .ui-sortable>li>span{
+ 	color:#666;
+ }
+.ui-sortable>li:hover{
+ 	color:#000;
+ 	font-weight:500;
+ }
+  
+ .announce{
+ 	float:left;
+ 	margin-left:2%;
+ 	margin-top:20px;
+ 	width:34%;
+ }
+ .loading {
+ display: table;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #fff;
+ z-index: 5;
+}
+.loading .progress {
+ display: table-cell;
+ vertical-align: middle;
+ text-align: center;
+}
+ 
+ .roll{
+ 	width:100%;
+ 	height:350px;
+ }
+ #myCarousel{
+ 	width:60%;
+ 	height:350px;
+ 	margin-left:2%;
+ 	margin-top:20px;
+ 	float:left;
+ }
+ .mainTitle{
+ 	position:absolute;
+    left:45%;
+    top:10%;
+    transform:translate(-50%);
+ 	color:#fff;
+ 	font:bold 70px/80px DFKai-SB;
+ 	
+ }
+ #menu{
+ 	position:fixed;
+ 	top:80px;
+ }
+ .topImg{
+ 	width:100%;
+ 	height:120px;
+ 	margin-top:-12px;
+ 	margin-bottom:12px;
+ }
+ .user-panel{
+ 		height:65px;	
+ }
+ #m_name{
+ margin-top:30px;
+ 	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ 	
+
+ 
+ #plusMap{
+ 	width:100%;
+ 	height:500px;
+ }
+ .icon{
+    width: 17px;
+    height: 17px;
+    text-align:center;
+    background-position: -120px -60px;
+    margin: 7px 7px;
+    
+ }
+ .search-plus{
+ 	position: absolute;
+    right: 25px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    background-color: #fff;
+    cursor:pointer;
+    color:#666;
+ }
+  .search-plus:hover{
+  color:red;
+  }
+ #container{
+	width:100%;
+	height:150px;
+}
+ table{
+ 	background-color:white;
+ }
 .dropdown-toggle{
 	color:#1a2226;
 }
@@ -29,9 +214,6 @@
  .pull-left{
  	margin-left:20px;
  }
-  .pull-right{
- 	margin-right:0px;
- }
 a[name="showMarket"]:link    {color:#1a2226;}
 a[name="showMarket"]:visited {color:#1a2226;}
 a[name="showMarket"]:hover   {color:#3c8dbc;}
@@ -44,9 +226,9 @@ a[name="showGood"]:hover   {color:#3c8dbc;}
  	color:#3c8dbc;
  }
  
- .nav-tabs-custom,.box{
+.box{
     /*  box-shadow: 0 0px 0px rgba(0,0,0,0.1); */
-	border-top: 0px solid #d2d6de;
+	border-top: 3px solid #d2d6de;
  	border-bottom: 0px solid #d2d6de;
 /*	border-left: 1px solid #d2d6de;
 	border-right: 1px solid #d2d6de; */

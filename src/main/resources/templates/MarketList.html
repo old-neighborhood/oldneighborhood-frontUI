@@ -6,10 +6,17 @@
 <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/AdminLTE.min.css" rel="stylesheet" />
 <link href="./css/sb-admin.css" rel="stylesheet" />
+<link href="./pace/pace.css" rel="stylesheet" />
 <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="./skins/_all-skins.min.css" rel="stylesheet" />
 </head>
 <body class="skin-blue sidebar-mini wysihtml5-supported" style="height: auto; min-height: 100%;">
+
+	<div class="pace  pace-inactive">
+	<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
 <div class="wrapper" style="height: auto; min-height: 100%;">
 	<div class="main-header">
 		<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -71,7 +78,7 @@
 				<li class="active treeview"><a href="MarketList"> <i
 						class="fa fa-list"></i> <span class="col-md-offset-3">商铺列表</span>
 				</a></li>
-				<li class="treeview"><a href="MarketList"> <i
+				<li class="treeview"><a href="Forum"> <i
 						class="fa fa-edit"></i> <span class="col-md-offset-3">论坛</span>
 				</a></li>
 				<li class="treeview"><a href="SalerInfo"> <i
@@ -86,6 +93,7 @@
 		<!-- /.sidebar -->
 	</aside>
 	<div class="content-wrapper">
+	
 		<nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="/SalerIndex">Home</a></li>
@@ -98,7 +106,7 @@
 				style="margin-top: 17px; margin-left: 1px;"></i>
 			</a>
 			
-		<div class="col-md-10" >
+		<div class="col-md-10" style="margin-left:20px;">
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -179,6 +187,7 @@
 	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
 	<script src="./js/adminlte.js"></script>
+	<script src="./js/pace.min.js"></script>
 	<script src="./js/demo.js"></script>
 	<script src="./js/marketlist.js"></script>
 </body>
