@@ -135,7 +135,7 @@ $().ready(function() {
 		  $.ajax({
 			    async: false,
 			    type: "GET",
-			    cache:false, 
+			    cache:true, 
 			    dataType: 'json',
 			    url: "/info",
 			    timeout: 3000,

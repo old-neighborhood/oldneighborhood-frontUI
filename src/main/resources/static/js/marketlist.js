@@ -15,7 +15,7 @@ var id;
 	 $.ajax({
 		    async: false,
 		    type: "GET",
-		    cache:false, 
+		    cache:true, 
 		    dataType: 'json',
 		    url: "/getMarkets",
 		    timeout: 3000,

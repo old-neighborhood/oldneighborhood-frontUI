@@ -221,7 +221,12 @@ $().ready(function() {
 		    success: function(msg) {
 		    	layer.close(index);
 		    	document.getElementsByClassName("wysihtml5-sandbox")[0].contentWindow.document.body.innerText = "";
-		    	$("#imgList").html("");
+		    	$("#imgList").html(
+		    			"<div class='addImg'>"+
+				        "<div class='upReviewImage'> "+
+				        "<input type='file' class='upReviewImg' id='wysiwyg_image_picture'/></div>"+
+				        "</div>"		
+		    	);
 		    	layer.msg("发表成功" , {anim: 6 });
 		    	setTimeout(getPostList(),1000);
 		    }

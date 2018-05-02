@@ -13,7 +13,7 @@ $().ready(function() {
 	$.ajax({
 			async: false,
 		    type: "GET",
-		    cache:false, 
+		    cache:true, 
 		    dataType: 'json',
 		    url: "/totalrows",
 		    timeout: 3000,
@@ -34,7 +34,7 @@ $().ready(function() {
 	$.ajax({
 		async: false,
 	    type: "POST",
-	    cache:false, 
+	    cache:true, 
 	    dataType: 'json',
 	    url: "/forumlist",
 	    timeout: 3000,
