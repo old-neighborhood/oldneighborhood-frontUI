@@ -9,30 +9,52 @@ var data = '[{"title":"第一个公告","sticky":true,"a_ID":"GG01","date":15239
 	'{"title":"第b个公告","sticky":true,"a_ID":"GG0b","date":1523927947000},'+
 	'{"title":"第三个公告所得到的阿三大叔大叔大叔大多多多多多多多","sticky":false,"a_ID":"GG03","date":1523927947000},'+
 	'{"title":"第四个公告","sticky":false,"a_ID":"GG04","date":1523927947000}]';
-var announceHTML = "";
-var a = eval('(' + data + ')');
-//if(a.length<=5){
-	$(".box-footer").hide();
-//}
-
-for(var i=0;i<a.length;i++){
-	announceHTML+='<li><input type="hidden" value="'+a[i].a_ID+'"/><a class="announce-a" href="/Announce">';
-	announceHTML+=a[i].title+'</a>'+
-	'<span class="pull-right">'+(new Date(a[i].date)).format("yy-MM-dd")+'</span></li>';
-}
-$(".ui-sortable").html(announceHTML);
-
 $.ajax({
 	async: false,
-	type: "GET",
+	type: "POST",
 	cache:false, 
 	dataType: 'json',
-	url: "/",
+	url: "/announcementList",
+	data:JSON.stringify({
+		current_page:1,
+		page_size:6,
+		desc_sort:true
+	}),
 	timeout: 3000,
 	contentType: "application/json;utf-8",
 	success: function(msg) {
 		data=msg;
 	}});
+var announceHTML = "";
+var a = eval('(' + data + ')');
+	//$(".box-footer").hide();
+
+for(var i=0;i<a.length;i++){
+		announceHTML+='<li><input type="hidden" value="'+a[i].a_ID+'"/><a class="announce-a" href="/Announce">';
+	if(a[i].isSticky==false)
+		announceHTML+=a[i].a_title+'</a>';
+	else
+		announceHTML+="<strong style='color:red;'>[置顶]</strong>"+a[i].a_title+'</a>';
+	announceHTML+='<span class="pull-right">'+(new Date(a[i].a_date.time)).format("yy-MM-dd")+'</span></li>';
+}
+$(".ui-sortable").html(announceHTML);
+$(document).on('click',".ui-sortable>li>a",function(e){ 
+	var a_ID = $(this).parent().find("input").val();
+	$.ajax({
+		async: false,
+	    type: "GET",
+	    cache:false, 
+	    url: "/setA_ID",
+	    timeout: 3000,
+	    data:{"a_ID":a_ID},
+	    contentType: "application/json;utf-8",
+	    success: function(msg) {
+	    	console.log(a_ID);
+	    }
+	});
+});
+
+
 var mList;
 $.ajax({
     async: false,

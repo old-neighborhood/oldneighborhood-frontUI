@@ -2,36 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>老街坊网站-公告</title>
+<title>老街坊网站-公告列表</title>
 <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="./fileinput/css/fileinput.css" rel="stylesheet" media="all"
+	type="text/css" />
 <link href="./css/AdminLTE.min.css" rel="stylesheet" />
-<link href="./css/sb-admin.css" rel="stylesheet" />
 <link href="./pace/pace.css" rel="stylesheet" />
+<link href="./css/sb-admin.css" rel="stylesheet" />
+<link href="./css/main.css" rel="stylesheet" />
 <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 <link href="./skins/_all-skins.min.css" rel="stylesheet" />
-<link href="./css/main.css" rel="stylesheet" />
-<link rel="stylesheet"
-	href="http://cache.amap.com/lbs/static/main1119.css" />
 </head>
 <body class="skin-blue sidebar-mini wysihtml5-supported"
 	style="height: auto; min-height: 100%;">
-	
-<!-- 	<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:px;
-	top:0;opacity:0.8;filter:alpha(opacity=80);z-index:10000;">
-	<div style="position: absolute; cursor1: wait; left:px; top:px; width: auto;
-	 height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px;
-	  background:url(/loading.gif) no-repeat scroll 5px 10px; color: #696969; 
-	  font-family:\'Microsoft YaHei\';">
-	  页面加载中，请等待...</div>
-	  </div> -->
 	
 	<div class="pace  pace-inactive">
 	<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
   <div class="pace-progress-inner"></div>
 </div>
 <div class="pace-activity"></div></div>
-	
-	
 	<div class="wrapper" style="height: auto; min-height: 100%;">
 		<div class="main-header">
 			<a href="/SalerIndex" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -105,15 +94,14 @@
 			<!-- /.sidebar -->
 		</aside>
 		<div class="content-wrapper">
-			<div style="position: relative;">
+		<div style="position: relative;">
 				<p class="mainTitle">老街坊</p>
 				<img src="/top.jpg" class="topImg" />
 			</div>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/SalerIndex">Home</a></li>
-					<li class="breadcrumb-item"><a href="/AnnouncementList">AnnouncementList</a></li>
-					<li class="active breadcrumb-item">Announcement</li>
+					<li class="active breadcrumb-item">AnnouncementList</li>
 				</ol>
 			</nav>
 			<a id="menu" class="sidebar-toggle" data-toggle="push-menu"
@@ -121,21 +109,44 @@
 				<i class="fa fa-angle-double-left"
 				style="margin-top: 17px; margin-left: 1px;"></i>
 			</a>
-			<div class="article">
-				<div class="a-title"></div>
-				<div class="a-info"></div>
-				<div class="a-content"></div>
+			<div class="col-md-11" style="margin-left:20px;">
+			<div class="row">
+				<h1 class="col-md-8" style="padding-bottom:50px;"><strong>公告</strong>列表</h1>
+				<div class="dropdown pull-right" style="width:100px;margin-right:15px;margin-top:80px;">
+                <a class="dropdown-toggle pull-right" data-toggle="dropdown" href="#" aria-expanded="false">时间顺序排序
+                 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">时间顺序排序</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">时间倒序排序</a></li>
+                </ul>
+              </div>
 			</div>
-	
-	</div>
+				<table class="table table-condensed" id="announceTable">
+					<thead>
+						<tr>
+							<th class="col-md-6">主题</th>
+							<th>作者</th>
+							<th>浏览</th>
+							<th>发布时间</th>
+						</tr>
+					</thead>
+					<tbody id="announces">
+					</tbody>
+				</table>
+				<ul class="pagination">
+				</ul>
+			</div>
+
+
+		</div>
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
 				<b>Version</b> 2.4.0
 			</div>
 			<strong></strong> All rights reserved.
 		</footer>
-		</div>
-	
+	</div>
 	<div class="modal fade in" id="logoutModal" tabindex="0" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -162,10 +173,12 @@
 	</div>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="./fileinput/js/fileinput.js" type="text/javascript"></script>
+	<script src="./fileinput/js/locales/zh.js" type="text/javascript"></script>
+	<script src="./js/pace.js"></script>
 	<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-	<script src="./js/pace.min.js"></script>
 	<script src="./js/adminlte.js"></script>
 	<script src="./js/demo.js"></script>
-	<script src="./js/announce.js"></script>
+	<script src="./js/announcementlist.js"></script>
 </body>
 </html>

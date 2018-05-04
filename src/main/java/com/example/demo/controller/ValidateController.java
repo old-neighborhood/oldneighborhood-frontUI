@@ -60,7 +60,6 @@ public class ValidateController {
 	@RequestMapping("/getInfo")
 	@ResponseBody
 	public String getInfo(@RequestBody Map<String,Object> reqMap) {
-		System.out.println("ID:"+reqMap.get("ID"));
 		return validateService.getInfo(reqMap);
 	}
 	
@@ -117,6 +116,10 @@ public class ValidateController {
 	@RequestMapping("/Announce")
 	public String Announce() {
 		return "/announce";
+	}
+	@RequestMapping("/AnnouncementList")
+	public String AnnouncementList() {
+		return "/announcementlist";
 	}
 	
 	@RequestMapping("/Register")

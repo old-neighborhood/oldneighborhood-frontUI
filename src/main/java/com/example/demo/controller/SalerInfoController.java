@@ -49,7 +49,6 @@ public class SalerInfoController {
 		if(session.getAttribute("ID")==null) {
 			return null;
 		}
-		System.out.println("session:"+session.getAttribute("ID")+" "+session.getMaxInactiveInterval());
 		return salerInfoService.getInfo(session.getAttribute("ID").toString());
 	}
 }

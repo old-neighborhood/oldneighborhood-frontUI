@@ -63,7 +63,6 @@ public class ForumController {
 	@RequestMapping(path= {"/totalposts"})
 	@ResponseBody
 	public String totalposts(HttpSession session) {
-		System.out.println("f_ID:"+session.getAttribute("f_ID").toString());
 		return forumService.totalposts(session.getAttribute("f_ID").toString());
 	}
 	
